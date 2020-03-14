@@ -1,4 +1,4 @@
-package com.hicks.team.TimelineBuilder;
+package com.hicks.team;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

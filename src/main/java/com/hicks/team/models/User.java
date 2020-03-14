@@ -5,9 +5,9 @@ import java.util.Objects;
 
 public class User {
 
+    private long id;
     private String email = "";
     private String displayName = "";
-    private long userId;
     private LocalDate dob;
     //todo how to handle auditing
 
@@ -16,7 +16,7 @@ public class User {
 
     @Override
     public String toString() {
-        return String.format("User [%d] - %s", userId, email);
+        return String.format("User [%d] - %s", id, email);
     }
 
     @Override
@@ -24,12 +24,12 @@ public class User {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         User user = (User) o;
-        return userId == user.userId;
+        return id == user.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(userId);
+        return Objects.hash(id);
     }
 
     public String getEmail() {
@@ -48,12 +48,12 @@ public class User {
         this.displayName = displayName;
     }
 
-    public long getUserId() {
-        return userId;
+    public long getId() {
+        return id;
     }
 
-    public void setUserId(long userId) {
-        this.userId = userId;
+    public void setId(long id) {
+        this.id = id;
     }
 
     public LocalDate getDob() {

@@ -87,7 +87,8 @@ public class MockUserRepository implements UserRepository {
 
     @Override
     public Optional<User> findById(Long aLong) {
-        return Optional.empty();
+        Optional<User> user = m_mockDatabase.getUsers().stream().filter(x -> x.getId() == aLong).limit(1).findFirst();
+        return user;
     }
 
     @Override

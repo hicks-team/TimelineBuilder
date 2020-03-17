@@ -1,6 +1,6 @@
-package com.hicks.team.repositories.Event;
+package com.hicks.team.repositories.EventGroup;
 
-import com.hicks.team.models.Event;
+import com.hicks.team.models.EventGroup;
 import com.hicks.team.repositories.MockDatabase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -14,37 +14,37 @@ import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Repository
-public class MockEventRepository implements EventRepository {
+public class MockEventGroupRepository implements EventGroupRepository {
 
     private MockDatabase mockDatabase;
 
     @Autowired
-    public MockEventRepository(MockDatabase mockDatabase) {
+    public MockEventGroupRepository(MockDatabase mockDatabase) {
         this.mockDatabase = mockDatabase;
     }
 
     @Override
-    public List<Event> findAllByUserId(long userId) {
-        return mockDatabase.getUserEvents().stream().filter(x -> x.getUserId() == userId).collect(Collectors.toList());
+    public List<EventGroup> findAllByUserId(long userId) {
+        return mockDatabase.getEventGroups().stream().filter(x -> x.getUserId() == userId).collect(Collectors.toList());
     }
 
     @Override
-    public List<Event> findAll() {
+    public List<EventGroup> findAll() {
         return null;
     }
 
     @Override
-    public List<Event> findAll(Sort sort) {
+    public List<EventGroup> findAll(Sort sort) {
         return null;
     }
 
     @Override
-    public List<Event> findAllById(Iterable<Long> longs) {
+    public List<EventGroup> findAllById(Iterable<Long> longs) {
         return null;
     }
 
     @Override
-    public <S extends Event> List<S> saveAll(Iterable<S> entities) {
+    public <S extends EventGroup> List<S> saveAll(Iterable<S> entities) {
         return null;
     }
 
@@ -54,12 +54,12 @@ public class MockEventRepository implements EventRepository {
     }
 
     @Override
-    public <S extends Event> S saveAndFlush(S entity) {
+    public <S extends EventGroup> S saveAndFlush(S entity) {
         return null;
     }
 
     @Override
-    public void deleteInBatch(Iterable<Event> entities) {
+    public void deleteInBatch(Iterable<EventGroup> entities) {
 
     }
 
@@ -69,32 +69,32 @@ public class MockEventRepository implements EventRepository {
     }
 
     @Override
-    public Event getOne(Long aLong) {
+    public EventGroup getOne(Long aLong) {
         return null;
     }
 
     @Override
-    public <S extends Event> List<S> findAll(Example<S> example) {
+    public <S extends EventGroup> List<S> findAll(Example<S> example) {
         return null;
     }
 
     @Override
-    public <S extends Event> List<S> findAll(Example<S> example, Sort sort) {
+    public <S extends EventGroup> List<S> findAll(Example<S> example, Sort sort) {
         return null;
     }
 
     @Override
-    public Page<Event> findAll(Pageable pageable) {
+    public Page<EventGroup> findAll(Pageable pageable) {
         return null;
     }
 
     @Override
-    public <S extends Event> S save(S entity) {
+    public <S extends EventGroup> S save(S entity) {
         return null;
     }
 
     @Override
-    public Optional<Event> findById(Long aLong) {
+    public Optional<EventGroup> findById(Long aLong) {
         return Optional.empty();
     }
 
@@ -114,12 +114,12 @@ public class MockEventRepository implements EventRepository {
     }
 
     @Override
-    public void delete(Event entity) {
+    public void delete(EventGroup entity) {
 
     }
 
     @Override
-    public void deleteAll(Iterable<? extends Event> entities) {
+    public void deleteAll(Iterable<? extends EventGroup> entities) {
 
     }
 
@@ -129,22 +129,22 @@ public class MockEventRepository implements EventRepository {
     }
 
     @Override
-    public <S extends Event> Optional<S> findOne(Example<S> example) {
+    public <S extends EventGroup> Optional<S> findOne(Example<S> example) {
         return Optional.empty();
     }
 
     @Override
-    public <S extends Event> Page<S> findAll(Example<S> example, Pageable pageable) {
+    public <S extends EventGroup> Page<S> findAll(Example<S> example, Pageable pageable) {
         return null;
     }
 
     @Override
-    public <S extends Event> long count(Example<S> example) {
+    public <S extends EventGroup> long count(Example<S> example) {
         return 0;
     }
 
     @Override
-    public <S extends Event> boolean exists(Example<S> example) {
+    public <S extends EventGroup> boolean exists(Example<S> example) {
         return false;
     }
 }

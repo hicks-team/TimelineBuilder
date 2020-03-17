@@ -1,33 +1,37 @@
 package com.hicks.team.models;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
 public class Event {
 
     private long id;
-    private String group = "";
+    private int group;
     private long userId;
     private String title = "";
     private String description = "";
-    private LocalDate startDate;
-    private LocalDate endDate;
+    private LocalDate start;
+    private LocalDate end;
     private Long parent;
 
     public Event(
-            String group,
+            long id,
+            int group,
             long userId,
             String title,
             String description,
             LocalDate startDate,
             LocalDate endDate,
             Long parent) {
+        this.id = id;
         this.group = group;
         this.userId = userId;
         this.title = title;
         this.description = description;
-        this.startDate = startDate;
-        this.endDate = endDate;
+        this.start = startDate;
+        this.end = endDate;
         this.parent = parent;
     }
 
@@ -57,11 +61,11 @@ public class Event {
         this.id = id;
     }
 
-    public String getGroup() {
+    public int getGroup() {
         return group;
     }
 
-    public void setGroup(String group) {
+    public void setGroup(int group) {
         this.group = group;
     }
 
@@ -73,6 +77,7 @@ public class Event {
         this.userId = userId;
     }
 
+    @JsonProperty("content")
     public String getTitle() {
         return title;
     }
@@ -89,20 +94,20 @@ public class Event {
         this.description = description;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public LocalDate getStart() {
+        return start;
     }
 
-    public void setStartDate(LocalDate startDate) {
-        this.startDate = startDate;
+    public void setStart(LocalDate start) {
+        this.start = start;
     }
 
-    public LocalDate getEndDate() {
-        return endDate;
+    public LocalDate getEnd() {
+        return end;
     }
 
-    public void setEndDate(LocalDate endDate) {
-        this.endDate = endDate;
+    public void setEnd(LocalDate end) {
+        this.end = end;
     }
 
     public Long getParent() {

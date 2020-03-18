@@ -14,6 +14,7 @@ public class Event {
     private String description = "";
     private LocalDate start;
     private LocalDate end;
+    private boolean current;
     private Long parent;
 
     public Event(
@@ -24,6 +25,7 @@ public class Event {
             String description,
             LocalDate startDate,
             LocalDate endDate,
+            boolean current,
             Long parent) {
         this.id = id;
         this.group = group;
@@ -32,6 +34,7 @@ public class Event {
         this.description = description;
         this.start = startDate;
         this.end = endDate;
+        this.current = current;
         this.parent = parent;
     }
 
@@ -116,5 +119,13 @@ public class Event {
 
     public void setParent(Long parent) {
         this.parent = parent;
+    }
+
+    public boolean isCurrent() {
+        return current;
+    }
+
+    public void setCurrent(boolean current) {
+        this.current = current;
     }
 }

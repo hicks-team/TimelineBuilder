@@ -56,7 +56,7 @@ public class MockDatabase {
     private List<Event> createEvents() {
         Event event1 = new Event(1, 7, 1, "Summer Vacation", "", LocalDate.of(2014, 8, 15), LocalDate.of(2014, 8, 31), false, null);
         Event event2 = new Event(2, 7, 1, "Short Vacation", "", LocalDate.of(2017, 10, 12), LocalDate.of(2017, 10, 15), false, null);
-        Event event3 = new Event(3, 1, 1, "Birthday", "", LocalDate.of(1987, 4, 1), LocalDate.of(1986, 1, 1), false, null);
+        Event event3 = new Event(3, 1, 1, "Birthday", "", LocalDate.of(1984, 4, 1), LocalDate.of(1986, 1, 1), false, null);
         Event event4 = new Event(4, 8, 1, "Puperino", "", LocalDate.of(2008, 4, 16), LocalDate.of(2014, 04, 19), false, null);
         Event event5 = new Event(5, 9, 1, "Boo Cat", "", LocalDate.of(2005, 4, 25), null, true, null);
         Event event6 = new Event(6, 4, 1, "High School", "", LocalDate.of(2001, 04, 25), LocalDate.of(2005, 05, 19), false, null);

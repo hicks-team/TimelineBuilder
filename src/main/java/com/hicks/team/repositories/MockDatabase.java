@@ -84,7 +84,13 @@ public class MockDatabase {
     private List<EventGroup> createEventGroups() {
         EventGroup eg1 = new EventGroup(1, "Life Events", 1);
         EventGroup eg2 = new EventGroup(2, "Travel", 1);
+        eg2.getNestedGroupIds().add(6);
+        eg2.getNestedGroupIds().add(7);
+
         EventGroup eg3 = new EventGroup(3, "Pets", 1);
+        eg3.getNestedGroupIds().add(8);
+        eg3.getNestedGroupIds().add(9);
+
         EventGroup eg4 = new EventGroup(4, "Education", 1);
         EventGroup eg5 = new EventGroup(5, "Jobs", 1);
         EventGroup eg6 = new EventGroup(6, "Business Trips", 1);

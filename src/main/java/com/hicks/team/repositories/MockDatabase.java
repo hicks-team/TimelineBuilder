@@ -57,7 +57,7 @@ public class MockDatabase {
         return List.of(
                 new Event(1, 7, 1, "Summer Vacation", "", "range", LocalDate.of(2014, 8, 15), LocalDate.of(2014, 8, 31), false, null, null),
                 new Event(2, 7, 1, "Short Vacation", "", "range", LocalDate.of(2017, 10, 12), LocalDate.of(2017, 10, 15), false, null, null),
-                new Event(3, 1, 1, "Born", "", "point", LocalDate.of(1984, 4, 1), null, false, null, null),
+                new Event(3, 1, 1, "Born", "", "point", LocalDate.of(1989, 4, 25), null, false, null, null),
                 new Event(4, 8, 1, "Puperino", "", "range", LocalDate.of(2008, 4, 16), LocalDate.of(2014, 4, 19), false, null, null),
                 new Event(5, 9, 1, "Boo Cat", "", "range", LocalDate.of(2005, 4, 25), null, true, null, null),
                 new Event(6, 4, 1, "High School", "", "range", LocalDate.of(2001, 4, 25), LocalDate.of(2005, 5, 19), false, null, null),
@@ -68,10 +68,7 @@ public class MockDatabase {
                 new Event(11, 8, 1, "Pupperino 2", "", "range", LocalDate.of(2010, 4, 19), LocalDate.of(2020, 4, 19), false, null, null),
                 new Event(12, 9, 1, "Cat 2", "", "range", LocalDate.of(2019, 5, 19), LocalDate.of(2019, 12, 19), false, null, null),
                 new Event(13, 2, 1, "Apply for Passport", "", "point", LocalDate.of(2007, 8, 25), null, false, null, null),
-                new Event(14, 2, 1, "Get Passport", "", "point", LocalDate.of(2007, 9, 25), null, false, null, null),
-                new Event(15, null, 1, "0", "", "background", LocalDate.of(1984, 4, 1), LocalDate.of(1985, 4, 1), false, null, "background-color: rgba(213,221,246,.4)"),
-                new Event(16, null, 1, "1", "", "background", LocalDate.of(1985, 4, 1), LocalDate.of(1986, 4, 1), false, null, "background-color: rgba(246,221,213,.4)"),
-                new Event(17, null, 1, "2", "", "background", LocalDate.of(1986, 4, 1), LocalDate.of(1987, 4, 1), false, null, "background-color: rgba(213,246,221,.4)"));
+                new Event(14, 2, 1, "Get Passport", "", "point", LocalDate.of(2007, 9, 25), null, false, null, null));
     }
 
     /**

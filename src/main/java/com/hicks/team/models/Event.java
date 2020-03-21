@@ -8,34 +8,40 @@ import java.util.Objects;
 public class Event {
 
     private long id;
-    private int group;
+    private Integer group;
     private long userId;
     private String title = "";
     private String description = "";
+    private String type = "";
     private LocalDate start;
     private LocalDate end;
     private boolean current;
     private Long parent;
+    private String style;
 
     public Event(
             long id,
-            int group,
+            Integer group,
             long userId,
             String title,
             String description,
+            String type,
             LocalDate startDate,
             LocalDate endDate,
             boolean current,
-            Long parent) {
+            Long parent,
+            String style) {
         this.id = id;
         this.group = group;
         this.userId = userId;
         this.title = title;
         this.description = description;
+        this.type = type;
         this.start = startDate;
         this.end = endDate;
         this.current = current;
         this.parent = parent;
+        this.style = style;
     }
 
     @Override
@@ -64,11 +70,13 @@ public class Event {
         this.id = id;
     }
 
-    public int getGroup() {
+    public Integer getGroup()
+    {
         return group;
     }
 
-    public void setGroup(int group) {
+    public void setGroup(Integer group)
+    {
         this.group = group;
     }
 
@@ -97,6 +105,16 @@ public class Event {
         this.description = description;
     }
 
+    public String getType()
+    {
+        return type;
+    }
+
+    public void setType(String type)
+    {
+        this.type = type;
+    }
+
     public LocalDate getStart() {
         return start;
     }
@@ -119,6 +137,16 @@ public class Event {
 
     public void setParent(Long parent) {
         this.parent = parent;
+    }
+
+    public String getStyle()
+    {
+        return style;
+    }
+
+    public void setStyle(String style)
+    {
+        this.style = style;
     }
 
     public boolean isCurrent() {

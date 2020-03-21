@@ -54,23 +54,24 @@ public class MockDatabase {
     }
 
     private List<Event> createEvents() {
-        Event event1 = new Event(1, 7, 1, "Summer Vacation", "", LocalDate.of(2014, 8, 15), LocalDate.of(2014, 8, 31), false, null);
-        Event event2 = new Event(2, 7, 1, "Short Vacation", "", LocalDate.of(2017, 10, 12), LocalDate.of(2017, 10, 15), false, null);
-        Event event3 = new Event(3, 1, 1, "Born", "", LocalDate.of(1984, 4, 1), null, false, null);
-        Event event4 = new Event(4, 8, 1, "Puperino", "", LocalDate.of(2008, 4, 16), LocalDate.of(2014, 04, 19), false, null);
-        Event event5 = new Event(5, 9, 1, "Boo Cat", "", LocalDate.of(2005, 4, 25), null, true, null);
-        Event event6 = new Event(6, 4, 1, "High School", "", LocalDate.of(2001, 04, 25), LocalDate.of(2005, 05, 19), false, null);
-        Event event7 = new Event(7, 4, 1, "College", "", LocalDate.of(2006, 04, 25), LocalDate.of(2010, 05, 19), false, null);
-        Event event8 = new Event(8, 5, 1, "Second Job", "", LocalDate.of(2012, 04, 25), LocalDate.of(2018, 05, 19), false, null);
-        Event event9 = new Event(9, 5, 1, "First Job", "", LocalDate.of(2008, 04, 25), LocalDate.of(2010, 05, 19), false, null);
-        Event event10 = new Event(10, 6, 1, "Client Meeting in Sacramento", "", LocalDate.of(2017, 03, 15), LocalDate.of(2017, 03, 20), false, null);
-        Event event11 = new Event(11, 8, 1, "Pupperino 2", "", LocalDate.of(2010, 04, 19), LocalDate.of(2020, 04, 19), false, null);
-        Event event12 = new Event(12, 9, 1, "Cat 2", "", LocalDate.of(2019, 05, 19), LocalDate.of(2019, 12, 19),false, null);
-        Event event13 = new Event(13, 2, 1, "Get Passport", "", LocalDate.of(2007, 8, 25), null, false, null);
-
-        return List.of(event1, event2, event3, event4, event5, event6,
-                event7, event8, event9, event10, event11,
-                event12, event13);
+        return List.of(
+                new Event(1, 7, 1, "Summer Vacation", "", "range", LocalDate.of(2014, 8, 15), LocalDate.of(2014, 8, 31), false, null, null),
+                new Event(2, 7, 1, "Short Vacation", "", "range", LocalDate.of(2017, 10, 12), LocalDate.of(2017, 10, 15), false, null, null),
+                new Event(3, 1, 1, "Born", "", "point", LocalDate.of(1984, 4, 1), null, false, null, null),
+                new Event(4, 8, 1, "Puperino", "", "range", LocalDate.of(2008, 4, 16), LocalDate.of(2014, 4, 19), false, null, null),
+                new Event(5, 9, 1, "Boo Cat", "", "range", LocalDate.of(2005, 4, 25), null, true, null, null),
+                new Event(6, 4, 1, "High School", "", "range", LocalDate.of(2001, 4, 25), LocalDate.of(2005, 5, 19), false, null, null),
+                new Event(7, 4, 1, "College", "", "range", LocalDate.of(2006, 4, 25), LocalDate.of(2010, 5, 19), false, null, null),
+                new Event(8, 5, 1, "Second Job", "", "range", LocalDate.of(2012, 4, 25), LocalDate.of(2018, 5, 19), false, null, null),
+                new Event(9, 5, 1, "First Job", "", "range", LocalDate.of(2008, 4, 25), LocalDate.of(2010, 5, 19), false, null, null),
+                new Event(10, 6, 1, "Client Meeting in Sacramento", "", "range", LocalDate.of(2017, 3, 15), LocalDate.of(2017, 3, 20), false, null, null),
+                new Event(11, 8, 1, "Pupperino 2", "", "range", LocalDate.of(2010, 4, 19), LocalDate.of(2020, 4, 19), false, null, null),
+                new Event(12, 9, 1, "Cat 2", "", "range", LocalDate.of(2019, 5, 19), LocalDate.of(2019, 12, 19), false, null, null),
+                new Event(13, 2, 1, "Apply for Passport", "", "point", LocalDate.of(2007, 8, 25), null, false, null, null),
+                new Event(14, 2, 1, "Get Passport", "", "point", LocalDate.of(2007, 9, 25), null, false, null, null),
+                new Event(15, null, 1, "0", "", "background", LocalDate.of(1984, 4, 1), LocalDate.of(1985, 4, 1), false, null, "background-color: rgba(213,221,246,.4)"),
+                new Event(16, null, 1, "1", "", "background", LocalDate.of(1985, 4, 1), LocalDate.of(1986, 4, 1), false, null, "background-color: rgba(246,221,213,.4)"),
+                new Event(17, null, 1, "2", "", "background", LocalDate.of(1986, 4, 1), LocalDate.of(1987, 4, 1), false, null, "background-color: rgba(213,246,221,.4)"));
     }
 
     /**

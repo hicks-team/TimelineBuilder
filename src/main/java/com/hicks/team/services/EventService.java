@@ -45,4 +45,8 @@ public class EventService {
         }
     }
 
+    public void createEvent(Event event) {
+        m_eventRepository.save(event);
+    }
+
 }

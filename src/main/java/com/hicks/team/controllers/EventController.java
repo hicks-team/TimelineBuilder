@@ -3,14 +3,13 @@ package com.hicks.team.controllers;
 import com.hicks.team.models.Event;
 import com.hicks.team.models.User;
 import com.hicks.team.models.dtos.EventAndGroupsDto;
+import com.hicks.team.models.dtos.NewEventRequestDto;
 import com.hicks.team.services.EventService;
 import com.hicks.team.services.UserService;
 import com.hicks.team.utils.StyleUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -65,6 +64,13 @@ public class EventController {
 
         eventAndGroupsDto.getUserEvents().addAll(birthdayEventsToAdd);
         return eventAndGroupsDto;
+    }
+
+    @PostMapping(value = "/userEvents", consumes = "application/json")
+    public HttpStatus createEvent(@RequestBody NewEventRequestDto eventRequest) {
+        m_eventService.createEvent(eventRequest.event());
+
+        return HttpStatus.OK;
     }
 
 }

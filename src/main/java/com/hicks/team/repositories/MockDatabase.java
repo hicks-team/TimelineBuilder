@@ -2,6 +2,7 @@ package com.hicks.team.repositories;
 
 import com.hicks.team.models.Event;
 import com.hicks.team.models.EventGroup;
+import com.hicks.team.models.Timeline;
 import com.hicks.team.models.User;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +21,7 @@ public class MockDatabase {
         data.put("users", createUsers());
         data.put("events", createEvents());
         data.put("eventGroups", createEventGroups());
+        data.put("timelines", createTimelines());
     }
 
     /*
@@ -97,5 +99,19 @@ public class MockDatabase {
         EventGroup eg9 = new EventGroup(9, "Cats", 1);
         
         return List.of(eg1,eg2,eg3,eg4,eg5,eg6,eg7,eg8,eg9);
+    }
+
+    /**
+     * Timeline stuff
+     */
+
+    public Timeline findByUserId(long userId) {
+        return (Timeline) data.get("timelines").get(0);
+    }
+
+    private List<Timeline> createTimelines() {
+        return List.of(
+                new Timeline(1, "Steven's timeline", "A life through time")
+        );
     }
 }

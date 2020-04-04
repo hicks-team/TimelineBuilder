@@ -11,6 +11,7 @@ import com.hicks.team.repositories.User.UserRepository;
 import com.hicks.team.utils.StyleUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -85,6 +86,15 @@ public class EventService {
 
     public void createEvent(Event event) {
         m_eventRepository.save(event);
+    }
+
+    public HttpStatus deleteEvent(Supplier<Long> eventIdSupplier) {
+        try {
+            m_eventRepository.deleteById(eventIdSupplier.get());
+            return HttpStatus.OK;
+        }catch (Exception e) {
+            return HttpStatus.INTERNAL_SERVER_ERROR;
+        }
     }
 
 }

@@ -39,8 +39,12 @@ public class EventController {
     @PostMapping(value = "/userEvents", consumes = "application/json")
     public HttpStatus createEvent(@RequestBody NewEventRequestDto eventRequest) {
         m_eventService.createEvent(eventRequest.event());
-
         return HttpStatus.OK;
+    }
+
+    @DeleteMapping(value = "/{userId}/{eventId}")
+    public HttpStatus deleteEvent(@PathVariable String userId, @PathVariable String eventId) {
+        return m_eventService.deleteEvent(() -> Long.parseLong(eventId));
     }
 
 }

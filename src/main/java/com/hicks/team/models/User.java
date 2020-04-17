@@ -1,10 +1,15 @@
 package com.hicks.team.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
 public class User {
 
+    @Id @GeneratedValue
     private long id;
     private String email = "";
     private String displayName = "";

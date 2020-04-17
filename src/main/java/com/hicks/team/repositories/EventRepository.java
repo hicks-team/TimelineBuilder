@@ -1,4 +1,4 @@
-package com.hicks.team.repositories.Event;
+package com.hicks.team.repositories;
 
 import com.hicks.team.models.Event;
 import org.springframework.data.jpa.repository.JpaRepository;

@@ -1,13 +1,22 @@
 package com.hicks.team.models;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.util.Objects;
 
+@Entity
 public class Timeline {
 
+    @Id @GeneratedValue
     private long id;
     private long userId;
     private String title = "";
     private String subTitle = "";
+
+    public Timeline()
+    {
+    }
 
     public Timeline(long userId, String title, String subTitle) {
         this.userId = userId;

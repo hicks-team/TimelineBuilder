@@ -1,4 +1,4 @@
-package com.hicks.team.repositories.EventGroup;
+package com.hicks.team.repositories;
 
 import com.hicks.team.models.EventGroup;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -10,5 +10,5 @@ import java.util.List;
 public interface EventGroupRepository extends JpaRepository<EventGroup, Long> {
 
     List<EventGroup> findAllByUserId(long userid);
-
+    EventGroup findByTitle(String title);
 }

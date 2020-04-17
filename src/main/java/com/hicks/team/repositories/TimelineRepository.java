@@ -1,4 +1,4 @@
-package com.hicks.team.repositories.Timeline;
+package com.hicks.team.repositories;
 
 import com.hicks.team.models.Timeline;
 import org.springframework.data.jpa.repository.JpaRepository;

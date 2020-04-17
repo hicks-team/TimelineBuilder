@@ -2,7 +2,7 @@ package com.hicks.team.services;
 
 import com.hicks.team.models.InvalidRequestException;
 import com.hicks.team.models.Timeline;
-import com.hicks.team.repositories.Timeline.TimelineRepository;
+import com.hicks.team.repositories.TimelineRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

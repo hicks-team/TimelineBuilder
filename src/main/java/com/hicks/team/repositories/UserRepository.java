@@ -1,4 +1,4 @@
-package com.hicks.team.repositories.User;
+package com.hicks.team.repositories;
 
 import com.hicks.team.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;

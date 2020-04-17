@@ -2,21 +2,32 @@ package com.hicks.team.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
 public class EventGroup {
 
+    @Id @GeneratedValue
     private long id;
     private String title = "";
     private long userId;
-    private List<Integer> nestedGroupIds;
+    private Long parentGroupId;
 
-    public EventGroup(long id, String title, long userId) {
-        this.id = id;
+    public EventGroup()
+    {
+    }
+
+    public EventGroup(String title, long userId) {
         this.title = title;
         this.userId = userId;
-        nestedGroupIds = new ArrayList<>();
+    }
+
+    public EventGroup(String title, long userId, long parentGroupId) {
+        this.title = title;
+        this.userId = userId;
+        this.parentGroupId = parentGroupId;
     }
 
     public long getId() {
@@ -44,13 +55,13 @@ public class EventGroup {
         this.userId = userId;
     }
 
-    @JsonProperty(value = "nestedGroups")
-    public List<Integer> getNestedGroupIds() {
-        return nestedGroupIds;
+    public Long getParentGroupId()
+    {
+        return parentGroupId;
     }
 
-    public void setNestedGroupIds(List<Integer> nestedGroupIds) {
-        this.nestedGroupIds = nestedGroupIds;
+    public void setParentGroupId(Long parentGroupId)
+    {
+        this.parentGroupId = parentGroupId;
     }
-
 }

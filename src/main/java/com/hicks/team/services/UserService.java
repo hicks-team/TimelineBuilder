@@ -2,7 +2,7 @@ package com.hicks.team.services;
 
 import com.hicks.team.models.InvalidRequestException;
 import com.hicks.team.models.User;
-import com.hicks.team.repositories.User.UserRepository;
+import com.hicks.team.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

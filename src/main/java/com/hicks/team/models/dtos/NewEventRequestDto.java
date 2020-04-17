@@ -10,7 +10,7 @@ public class NewEventRequestDto {
 
     private final static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
-    private Integer group;
+    private Long group;
     private String title = "";
     private String description = "";
     private String start = "";
@@ -21,7 +21,6 @@ public class NewEventRequestDto {
 
     public Event event() {
         Event event = new Event(
-                1000,
                 this.group,
                 this.userId,
                 this.title,
@@ -30,7 +29,6 @@ public class NewEventRequestDto {
                 getStart(),
                 getEnd(),
                 this.current,
-                null,
                 ""
         );
 
@@ -45,11 +43,11 @@ public class NewEventRequestDto {
         this.userId = userId;
     }
 
-    public Integer getGroup() {
+    public Long getGroup() {
         return group;
     }
 
-    public void setGroup(Integer group) {
+    public void setGroup(Long group) {
         this.group = group;
     }
 

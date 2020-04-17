@@ -2,13 +2,18 @@ package com.hicks.team.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.time.LocalDate;
 import java.util.Objects;
 
+@Entity
 public class Event {
 
+    @Id @GeneratedValue
     private long id;
-    private Integer group;
+    private Long groupId;
     private long userId;
     private String title = "";
     private String description = "";
@@ -16,12 +21,14 @@ public class Event {
     private LocalDate start;
     private LocalDate end;
     private boolean current;
-    private Long parent;
     private String style;
 
+    public Event()
+    {
+    }
+
     public Event(
-            long id,
-            Integer group,
+            Long groupId,
             long userId,
             String title,
             String description,
@@ -29,10 +36,8 @@ public class Event {
             LocalDate startDate,
             LocalDate endDate,
             boolean current,
-            Long parent,
             String style) {
-        this.id = id;
-        this.group = group;
+        this.groupId = groupId;
         this.userId = userId;
         this.title = title;
         this.description = description;
@@ -40,7 +45,6 @@ public class Event {
         this.start = startDate;
         this.end = endDate;
         this.current = current;
-        this.parent = parent;
         this.style = style;
     }
 
@@ -70,14 +74,15 @@ public class Event {
         this.id = id;
     }
 
-    public Integer getGroup()
+    @JsonProperty("group")
+    public Long getGroupId()
     {
-        return group;
+        return groupId;
     }
 
-    public void setGroup(Integer group)
+    public void setGroupId(Long groupId)
     {
-        this.group = group;
+        this.groupId = groupId;
     }
 
     public long getUserId() {
@@ -129,14 +134,6 @@ public class Event {
 
     public void setEnd(LocalDate end) {
         this.end = end;
-    }
-
-    public Long getParent() {
-        return parent;
-    }
-
-    public void setParent(Long parent) {
-        this.parent = parent;
     }
 
     public String getStyle()

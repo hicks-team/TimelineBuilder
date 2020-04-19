@@ -64,20 +64,20 @@ public class Setup {
 
     private void createEvents() {
         List<Event> events = List.of(
-                new Event(eventGroupRepository.findByTitle("Life Events").getId(), 1, "Born", "", "point", LocalDate.of(1989, 4, 25), null, false, null),
-                new Event(eventGroupRepository.findByTitle("Travel").getId(), 1, "Apply for Passport", "", "point", LocalDate.of(2007, 8, 25), null, false, null),
-                new Event(eventGroupRepository.findByTitle("Travel").getId(), 1, "Get Passport", "", "point", LocalDate.of(2007, 9, 25), null, false, null),
-                new Event(eventGroupRepository.findByTitle("Education").getId(), 1, "High School", "", "range", LocalDate.of(2001, 4, 25), LocalDate.of(2005, 5, 19), false, null),
-                new Event(eventGroupRepository.findByTitle("Education").getId(), 1, "College", "", "range", LocalDate.of(2006, 4, 25), LocalDate.of(2010, 5, 19), false, null),
-                new Event(eventGroupRepository.findByTitle("Jobs").getId(), 1, "Second Job", "", "range", LocalDate.of(2012, 4, 25), LocalDate.of(2018, 5, 19), false, null),
-                new Event(eventGroupRepository.findByTitle("Jobs").getId(), 1, "First Job", "", "range", LocalDate.of(2008, 4, 25), LocalDate.of(2010, 5, 19), false, null),
-                new Event(eventGroupRepository.findByTitle("Business Trips").getId(), 1, "Client Meeting in Sacramento", "", "range", LocalDate.of(2017, 3, 15), LocalDate.of(2017, 3, 20), false, null),
-                new Event(eventGroupRepository.findByTitle("Vacation").getId(), 1, "Summer Vacation", "", "range", LocalDate.of(2014, 8, 15), LocalDate.of(2014, 8, 31), false, null),
-                new Event(eventGroupRepository.findByTitle("Vacation").getId(), 1, "Short Vacation", "", "range", LocalDate.of(2017, 10, 12), LocalDate.of(2017, 10, 15), false, null),
-                new Event(eventGroupRepository.findByTitle("Dogs").getId(), 1, "Puperino", "", "range", LocalDate.of(2008, 4, 16), LocalDate.of(2014, 4, 19), false, null),
-                new Event(eventGroupRepository.findByTitle("Dogs").getId(), 1, "Pupperino 2", "", "range", LocalDate.of(2010, 4, 19), LocalDate.of(2020, 4, 19), false, null),
-                new Event(eventGroupRepository.findByTitle("Cats").getId(), 1, "Boo Cat", "", "range", LocalDate.of(2005, 4, 25), null, true, null),
-                new Event(eventGroupRepository.findByTitle("Cats").getId(), 1, "Cat 2", "", "range", LocalDate.of(2019, 5, 19), LocalDate.of(2019, 12, 19), false, null));
+                new Event(eventGroupRepository.findByTitle("Life Events").getId(), 1, "Born", "point", LocalDate.of(1989, 4, 25), null, false, null),
+                new Event(eventGroupRepository.findByTitle("Travel").getId(), 1, "Apply for Passport", "point", LocalDate.of(2007, 8, 25), null, false, null),
+                new Event(eventGroupRepository.findByTitle("Travel").getId(), 1, "Get Passport", "point", LocalDate.of(2007, 9, 25), null, false, null),
+                new Event(eventGroupRepository.findByTitle("Education").getId(), 1, "High School", "range", LocalDate.of(2001, 4, 25), LocalDate.of(2005, 5, 19), false, null),
+                new Event(eventGroupRepository.findByTitle("Education").getId(), 1, "College", "range", LocalDate.of(2006, 4, 25), LocalDate.of(2010, 5, 19), false, null),
+                new Event(eventGroupRepository.findByTitle("Jobs").getId(), 1, "Second Job", "range", LocalDate.of(2012, 4, 25), LocalDate.of(2018, 5, 19), false, null),
+                new Event(eventGroupRepository.findByTitle("Jobs").getId(), 1, "First Job", "range", LocalDate.of(2008, 4, 25), LocalDate.of(2010, 5, 19), false, null),
+                new Event(eventGroupRepository.findByTitle("Business Trips").getId(), 1, "Client Meeting in Sacramento", "range", LocalDate.of(2017, 3, 15), LocalDate.of(2017, 3, 20), false, null),
+                new Event(eventGroupRepository.findByTitle("Vacation").getId(), 1, "Summer Vacation", "range", LocalDate.of(2014, 8, 15), LocalDate.of(2014, 8, 31), false, null),
+                new Event(eventGroupRepository.findByTitle("Vacation").getId(), 1, "Short Vacation", "range", LocalDate.of(2017, 10, 12), LocalDate.of(2017, 10, 15), false, null),
+                new Event(eventGroupRepository.findByTitle("Dogs").getId(), 1, "Puperino", "range", LocalDate.of(2008, 4, 16), LocalDate.of(2014, 4, 19), false, null),
+                new Event(eventGroupRepository.findByTitle("Dogs").getId(), 1, "Pupperino 2", "range", LocalDate.of(2010, 4, 19), LocalDate.of(2020, 4, 19), false, null),
+                new Event(eventGroupRepository.findByTitle("Cats").getId(), 1, "Boo Cat", "range", LocalDate.of(2005, 4, 25), null, true, null),
+                new Event(eventGroupRepository.findByTitle("Cats").getId(), 1, "Cat 2", "range", LocalDate.of(2019, 5, 19), LocalDate.of(2019, 12, 19), false, null));
 
         eventRepository.saveAll(events);
 
@@ -91,7 +91,7 @@ public class Setup {
             LocalDate today = LocalDate.now();
             int years = today.getYear() - dob.getYear();
             for (int i = 0; i < years; i++) {
-                birthdayEvents.add(new Event(null, 1, "" + i, "", "background",
+                birthdayEvents.add(new Event(null, 1, "" + i, "background",
                         dob.plusYears(i), dob.plusYears((i+1)), false, StyleUtils.getRandomBackgroundColor()));
             }
 

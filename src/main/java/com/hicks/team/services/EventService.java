@@ -56,6 +56,10 @@ public class EventService {
         m_eventRepository.save(event);
     }
 
+    public void updateEvent(Event event) {
+        m_eventRepository.save(event);
+    }
+
     public HttpStatus deleteEvent(Supplier<Long> eventIdSupplier) {
         try {
             m_eventRepository.deleteById(eventIdSupplier.get());

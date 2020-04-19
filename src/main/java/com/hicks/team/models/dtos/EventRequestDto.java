@@ -6,13 +6,13 @@ import com.hicks.team.models.Event;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
-public class NewEventRequestDto {
-
+public class EventRequestDto
+{
     private final static DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
 
+    private Long id;
     private Long group;
-    private String title = "";
-    private String description = "";
+    private String content = "";
     private String start = "";
     private String end = "";
     private boolean current;
@@ -21,10 +21,10 @@ public class NewEventRequestDto {
 
     public Event event() {
         Event event = new Event(
+                this.id,
                 this.group,
                 this.userId,
-                this.title,
-                this.description,
+                this.content,
                 this.type,
                 getStart(),
                 getEnd(),
@@ -33,6 +33,16 @@ public class NewEventRequestDto {
         );
 
         return event;
+    }
+
+    public Long getId()
+    {
+        return id;
+    }
+
+    public void setId(Long id)
+    {
+        this.id = id;
     }
 
     public Integer getUserId() {
@@ -51,21 +61,14 @@ public class NewEventRequestDto {
         this.group = group;
     }
 
-    public String getTitle() {
-        return title;
+    public String getContent()
+    {
+        return content;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    @JsonProperty("content")
-    public void setDescription(String description) {
-        this.description = description;
+    public void setContent(String content)
+    {
+        this.content = content;
     }
 
     public LocalDate getStart() {

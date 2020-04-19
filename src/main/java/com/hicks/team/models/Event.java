@@ -15,8 +15,7 @@ public class Event {
     private long id;
     private Long groupId;
     private long userId;
-    private String title = "";
-    private String description = "";
+    private String content = "";
     private String type = "";
     private LocalDate start;
     private LocalDate end;
@@ -30,8 +29,7 @@ public class Event {
     public Event(
             Long groupId,
             long userId,
-            String title,
-            String description,
+            String content,
             String type,
             LocalDate startDate,
             LocalDate endDate,
@@ -39,8 +37,28 @@ public class Event {
             String style) {
         this.groupId = groupId;
         this.userId = userId;
-        this.title = title;
-        this.description = description;
+        this.content = content;
+        this.type = type;
+        this.start = startDate;
+        this.end = endDate;
+        this.current = current;
+        this.style = style;
+    }
+
+    public Event(
+            Long id,
+            Long groupId,
+            long userId,
+            String content,
+            String type,
+            LocalDate startDate,
+            LocalDate endDate,
+            boolean current,
+            String style) {
+        this.id = id;
+        this.groupId = groupId;
+        this.userId = userId;
+        this.content = content;
         this.type = type;
         this.start = startDate;
         this.end = endDate;
@@ -50,7 +68,7 @@ public class Event {
 
     @Override
     public String toString() {
-        return String.format("Event [%d] %s", id, title);
+        return String.format("Event [%d] %s", id, content);
     }
 
     @Override
@@ -93,21 +111,14 @@ public class Event {
         this.userId = userId;
     }
 
-    @JsonProperty("content")
-    public String getTitle() {
-        return title;
+    public String getContent()
+    {
+        return content;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setContent(String content)
+    {
+        this.content = content;
     }
 
     public String getType()

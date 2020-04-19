@@ -1,20 +1,12 @@
 package com.hicks.team.controllers;
 
-import com.hicks.team.models.Event;
-import com.hicks.team.models.User;
 import com.hicks.team.models.dtos.EventAndGroupsDto;
-import com.hicks.team.models.dtos.NewEventRequestDto;
+import com.hicks.team.models.dtos.EventRequestDto;
 import com.hicks.team.services.EventService;
 import com.hicks.team.services.UserService;
-import com.hicks.team.utils.StyleUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @RestController
 @RequestMapping("/event")
@@ -37,8 +29,14 @@ public class EventController {
     }
 
     @PostMapping(value = "/userEvents", consumes = "application/json")
-    public HttpStatus createEvent(@RequestBody NewEventRequestDto eventRequest) {
+    public HttpStatus createEvent(@RequestBody EventRequestDto eventRequest) {
         m_eventService.createEvent(eventRequest.event());
+        return HttpStatus.OK;
+    }
+
+    @PutMapping(value = "/userEvents", consumes = "application/json")
+    public HttpStatus updateEvent(@RequestBody EventRequestDto eventRequest) {
+        m_eventService.updateEvent(eventRequest.event());
         return HttpStatus.OK;
     }
 

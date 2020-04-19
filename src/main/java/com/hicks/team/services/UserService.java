@@ -4,7 +4,6 @@ import com.hicks.team.models.InvalidRequestException;
 import com.hicks.team.models.User;
 import com.hicks.team.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,8 +13,7 @@ import java.util.function.Supplier;
 @Service
 public class UserService {
 
-    @Qualifier("mockUserRepository")
-    private UserRepository userRepository;
+    final private UserRepository userRepository;
 
     @Autowired()
     public UserService(UserRepository userRepository) {

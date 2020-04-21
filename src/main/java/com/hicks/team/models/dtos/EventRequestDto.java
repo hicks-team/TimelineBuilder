@@ -80,7 +80,13 @@ public class EventRequestDto
     }
 
     public LocalDate getEnd() {
-        return LocalDate.parse(this.end, dtf);
+        try {
+            return LocalDate.parse(this.end, dtf);
+        }
+        catch (Exception e)
+        {
+            return null;
+        }
     }
 
     public void setEnd(String end) {

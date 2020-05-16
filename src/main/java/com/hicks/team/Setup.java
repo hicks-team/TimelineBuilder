@@ -8,7 +8,6 @@ import com.hicks.team.repositories.EventGroupRepository;
 import com.hicks.team.repositories.EventRepository;
 import com.hicks.team.repositories.TimelineRepository;
 import com.hicks.team.repositories.UserRepository;
-import com.hicks.team.utils.StyleUtils;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
@@ -90,9 +89,13 @@ public class Setup {
             LocalDate dob = user.getDob();
             LocalDate today = LocalDate.now();
             int years = today.getYear() - dob.getYear();
+
+            String even = "background-color: rgba(255,255,255,0.1)";
+            String odd = "background-color: rgba(200,200,200,0.1)";
+
             for (int i = 0; i < years; i++) {
                 birthdayEvents.add(new Event(null, 1, "" + i, "background",
-                        dob.plusYears(i), dob.plusYears((i+1)), false, StyleUtils.getRandomBackgroundColor()));
+                        dob.plusYears(i), dob.plusYears((i+1)), false, i % 2 == 0 ? even : odd));
             }
 
             eventRepository.saveAll(birthdayEvents);

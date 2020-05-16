@@ -114,10 +114,10 @@ public class Setup {
         eventGroupRepository.saveAll(eventGroups);
 
         List<EventGroup> groupsWithParents = List.of(
-                new EventGroup("Business Trips", 1, eventGroupRepository.findByTitle("Travel").getId()),
-                new EventGroup("Vacation", 1, eventGroupRepository.findByTitle("Travel").getId()),
-                new EventGroup("Dogs", 1, eventGroupRepository.findByTitle("Pets").getId()),
-                new EventGroup("Cats", 1, eventGroupRepository.findByTitle("Pets").getId())
+                new EventGroup("Business Trips", 1, eventGroupRepository.findByTitle("Travel").getId(), 2),
+                new EventGroup("Vacation", 1, eventGroupRepository.findByTitle("Travel").getId(), 2),
+                new EventGroup("Dogs", 1, eventGroupRepository.findByTitle("Pets").getId(), 2),
+                new EventGroup("Cats", 1, eventGroupRepository.findByTitle("Pets").getId(), 2)
         );
 
         eventGroupRepository.saveAll(groupsWithParents);

@@ -3,21 +3,16 @@ package com.hicks.team.services;
 import com.hicks.team.models.Event;
 import com.hicks.team.models.EventGroup;
 import com.hicks.team.models.InvalidRequestException;
-import com.hicks.team.models.User;
 import com.hicks.team.models.dtos.EventAndGroupsDto;
 import com.hicks.team.repositories.EventGroupRepository;
 import com.hicks.team.repositories.EventRepository;
 import com.hicks.team.repositories.UserRepository;
-import com.hicks.team.utils.StyleUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
 
 @Service
 public class EventService {

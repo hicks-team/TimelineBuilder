@@ -14,6 +14,7 @@ public class EventGroup {
     private String title = "";
     private long userId;
     private Long parentGroupId;
+    private int treeLevel = 1;
 
     public EventGroup()
     {
@@ -24,10 +25,11 @@ public class EventGroup {
         this.userId = userId;
     }
 
-    public EventGroup(String title, long userId, long parentGroupId) {
+    public EventGroup(String title, long userId, long parentGroupId, int treeLevel) {
         this.title = title;
         this.userId = userId;
         this.parentGroupId = parentGroupId;
+        this.treeLevel = treeLevel;
     }
 
     public long getId() {
@@ -63,5 +65,15 @@ public class EventGroup {
     public void setParentGroupId(Long parentGroupId)
     {
         this.parentGroupId = parentGroupId;
+    }
+
+    public int getTreeLevel()
+    {
+        return treeLevel;
+    }
+
+    public void setTreeLevel(int treeLevel)
+    {
+        this.treeLevel = treeLevel;
     }
 }
